@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Обладнання навчальної майстерні</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; color: #172b46; background: #edf3f6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 16px; }
+    main { max-width: 1000px; margin: auto; background: white; padding: 36px; border-top: 6px solid #087f8c; border-radius: 8px; }
+    .eyebrow { color: #086574; font-size: .8rem; letter-spacing: .12em; font-weight: bold; }
+    h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin: 12px 0; overflow-wrap: anywhere; }
+    h2 { margin-top: 32px; font-size: 1.25rem; }
+    p { line-height: 1.6; overflow-wrap: anywhere; }
+    .meta, footer { color: #475569; font-size: .9rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0; }
+    .card { background: #f1f7f8; border: 1px solid #ccdde1; padding: 18px; border-radius: 6px; }
+    .card strong { display: block; font-size: 2rem; margin-top: 8px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    caption { text-align: left; padding-bottom: 12px; color: #475569; line-height: 1.5; }
+    th, td { padding: 13px 10px; border-bottom: 1px solid #dce5ec; text-align: left; }
+    th { background: #172b46; color: white; }
+    td { overflow-wrap: anywhere; }
+    .number { text-align: right; font-variant-numeric: tabular-nums; }
+    .low { color: #8b3800; font-weight: bold; }
+    footer { border-top: 1px solid #dce5ec; margin-top: 30px; padding-top: 16px; line-height: 1.6; }
+    button { background: #086574; color: white; border: 0; padding: 11px 18px; border-radius: 4px; font: inherit; cursor: pointer; }
+    button:focus-visible { outline: 3px solid #172b46; outline-offset: 3px; }
+    @media (max-width: 600px) { main { padding: 20px; } .cards { grid-template-columns: 1fr; } }
+    @media print { body { background: white; padding: 0; } main { padding: 0; border: 0; } button { display: none; } .table-wrap { overflow: visible; } tr { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">НАВЧАЛЬНИЙ ЗВІТ • ОБЛІК ОБЛАДНАННЯ</p>
+    <h1>Обладнання навчальної майстерні</h1>
+    <p>Майстерня «Обрій»</p>
+    <p class="meta">Стан на 2026-09-20T10:00:00&#43;03:00<br>Сформовано 2026-09-21T13:01:59Z</p>
+  </header>
+  <section aria-label="Основні показники" class="cards">
+    <div class="card">Найменувань<strong>3</strong></div>
+    <div class="card">Одиниць обладнання<strong>15</strong></div>
+    <div class="card">Потребують поповнення<strong>2</strong></div>
+  </section>
+  <section>
+    <h2>Наявність обладнання</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>Поповнення потрібне, якщо кількість менша за визначений мінімум. Усі кількості подано в штуках.</caption>
+        <thead><tr><th scope="col">№</th><th scope="col">Найменування</th><th scope="col" class="number">Наявно</th><th scope="col" class="number">Мінімум</th><th scope="col">Стан</th></tr></thead>
+        <tbody>
+
+          <tr><td>1</td><td>Кабель USB-C</td><td class="number">12</td><td class="number">5</td><td>Достатньо</td></tr>
+
+          <tr><td>2</td><td>Мультиметр</td><td class="number">3</td><td class="number">5</td><td><span class="low">Поповнити</span></td></tr>
+
+          <tr><td>3</td><td>Набір &lt;навчальний&gt; &amp; запасний</td><td class="number">0</td><td class="number">2</td><td><span class="low">Поповнити</span></td></tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <footer>
+    <p>Вигадані дані для навчання. Показники обчислено Go-програмою з локального JSON. Усі дані доступні без мережі та JavaScript.</p>
+    <button type="button" id="print-report" hidden>Друк звіту</button>
+  </footer>
+</main>
+<script>
+
+  const printButton = document.getElementById('print-report');
+  printButton.hidden = false;
+  printButton.addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
